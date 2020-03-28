@@ -1,0 +1,44 @@
+// BASIC RESET
+h1, h2, h3, h4, h5, h6,
+p, ul, li, ol,
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+html {
+    @include respond(desktop-large) {
+        // width > 1440px
+        font-size: 68.75%; // 1rem = 11px
+    }
+    @include respond(desktop-medium) {
+        // 1200px <= width <= 1439px
+        font-size: 62.5%; // 1rem = 10px
+    }
+    @include respond(desktop) {
+        // 992px - 1199px
+        font-size: 56.25%; // 1rem = 9px
+    }
+    @include respond(tablet) {
+        // 768px - 991px
+        font-size: 56.25%; // 1rem = 9px
+    }
+    @include respond(mobile) {
+        // width < 767px
+        font-size: 50%; // 1rem = 8px
+    }
+}
+
+.root {
+    position: relative;
+    min-height: 100vh;
+    background-color: $color-grey-0;
+}
